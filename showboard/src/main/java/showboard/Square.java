@@ -18,10 +18,23 @@ public class Square implements ISquare {
     private boolean solid;
     private final char id;
 
+    /**
+     * 
+     * @param path
+     * @param solid
+     * @param id
+     * @throws IOException
+     */
     public Square(String path, boolean solid, char id) throws IOException {
         this(ImageIO.read(new File(path)), solid, id);
     }
 
+    /**
+     * 
+     * @param image
+     * @param solid
+     * @param id
+     */
     private Square(Image image, boolean solid, char id) {
         this.image = image;
         this.solid = solid;

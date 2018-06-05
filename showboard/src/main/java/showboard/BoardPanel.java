@@ -108,10 +108,18 @@ public class BoardPanel extends JPanel implements Observer {
         
     }
 
+    /**
+     * Instantiate the end of the Panel
+     * @return
+     */
     public boolean isFinished() {
         return finished;
     }
 
+    /**
+     * 
+     * @param finished
+     */
     public void setFinished(boolean finished) {
         this.finished = finished;
     }
@@ -195,6 +203,12 @@ public class BoardPanel extends JPanel implements Observer {
         return image;
     }
 
+    /**
+     * Put the Pawns in a list
+     * @param x
+     * @param y
+     * @return
+     */
     public List<IPawn> getPawnsAt(int x, int y) {
         List<IPawn> ret = new ArrayList<>();
         for (IPawn pawn : pawns) {
@@ -205,6 +219,12 @@ public class BoardPanel extends JPanel implements Observer {
         return ret;
     }
 
+    /**
+     * Dimension the Squares
+     * @param x
+     * @param y
+     * @return
+     */
     public ISquare getSquareAt(int x, int y) {
         if (x < 0 || x >= dimension.getWidth() || y < 0 || y >= dimension.getHeight()) {
             return null;
@@ -212,6 +232,12 @@ public class BoardPanel extends JPanel implements Observer {
         return squares[x][y];
     }
 
+    /**
+     * Add a permeability
+     * @param x
+     * @param y
+     * @return
+     */
     public boolean isSolidAt(int x, int y) {
         ISquare square = getSquareAt(x, y);
         if (square != null && square.isSolid())

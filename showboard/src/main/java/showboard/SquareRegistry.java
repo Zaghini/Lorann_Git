@@ -17,6 +17,9 @@ public class SquareRegistry {
 
     private final Map<Character, Square> registry;
 
+    /**
+     * Put Squares in a Registry
+     */
     private SquareRegistry() {
         registry = new HashMap<>();
         try {
@@ -32,10 +35,19 @@ public class SquareRegistry {
         }
     }
 
+    /**
+     * Recovers the Squares in the Registry
+     * @param key
+     * @return
+     */
     public ISquare getSquare(char key) {
         return registry.get(key);
     }
 
+    /**
+     * Instantiate a Registry
+     * @return
+     */
     public static SquareRegistry getInstance() {
         if (instance == null)
             instance = new SquareRegistry();

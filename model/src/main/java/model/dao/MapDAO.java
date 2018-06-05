@@ -14,14 +14,34 @@ import java.sql.SQLException;
  * @since 04/06/2018
  */
 public abstract class MapDAO extends AbstractDAO {
-
+	
+/**
+ * Call of the Procedure
+ */
 	private static final String sqlMapByName = "{call findMapByName(?)}";
 
+/**
+ * 
+ * @param name
+ * Recovers Name on the table Map on the DB
+ * @return
+ * @throws SQLException
+ */
     public static Map getMapByName(final String name) throws SQLException {
         final CallableStatement statement = prepareCall(sqlMapByName);
         statement.setString(1, name);
         return getMap(statement, null);
     }
+    
+/**
+ * 
+ * @param callStatement
+ * Execute the Procedure
+ * @param map
+ * @return
+ * @throws SQLException
+ * 
+ */
 
     private static Map getMap(CallableStatement callStatement, Map map) throws SQLException {
         if (callStatement.execute()) {

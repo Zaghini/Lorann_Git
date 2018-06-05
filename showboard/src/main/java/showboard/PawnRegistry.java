@@ -15,6 +15,11 @@ public class PawnRegistry {
 
     private final Map<String, IPawnBuilder> registry;
 
+    /**
+     * 
+     * @param boardPanel
+     * Instantiate the Pawns in the Registry
+     */
     public PawnRegistry(BoardPanel boardPanel) {
         registry = new HashMap<>();
         try {
@@ -28,6 +33,14 @@ public class PawnRegistry {
         }
     }
 
+    /**
+     * Recovers the Pawn in the Registry and instantiate it
+     * @param key
+     * @param x
+     * @param y
+     * @return
+     * @throws IOException
+     */
     public IPawn getPawn(String key, int x, int y) throws IOException {
         IPawnBuilder builder = registry.get(key);
         if (builder == null)

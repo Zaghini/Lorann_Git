@@ -17,6 +17,16 @@ public class Map {
     private       String mapData;
     private       String pawnData;
 
+    
+    /**
+     * 
+     * @param id
+     * @param name
+     * @param width
+     * @param height
+     * @param mapData
+     * @param pawnData
+     */
     public Map(int id, String name, int width, int height, String mapData, String pawnData) {
         this.id = id;
         this.name = name;

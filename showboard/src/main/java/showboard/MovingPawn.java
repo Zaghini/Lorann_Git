@@ -14,14 +14,31 @@ public abstract class MovingPawn extends Pawn {
 
     private float moveDelay = 1, moveTimer = 0;
 
+    /**
+     * 
+     * @param image
+     * @param solid
+     * @param boardPanel
+     */
     public MovingPawn(Image image, boolean solid, BoardPanel boardPanel) {
         super(image, solid, boardPanel);
     }
 
+    /**
+     * 
+     * @param imagePath
+     * @param boardPanel
+     * @throws IOException
+     */
     public MovingPawn(String imagePath, BoardPanel boardPanel) throws IOException {
         super(imagePath, boardPanel);
     }
 
+    /**
+     * 
+     * @param image
+     * @param boardPanel
+     */
     public MovingPawn(Image image, BoardPanel boardPanel) {
         super(image, boardPanel);
     }
@@ -36,6 +53,9 @@ public abstract class MovingPawn extends Pawn {
 
     protected abstract boolean onMove();
 
+    /**
+     * Update Timer
+     */
     @Override
     public void update(float delta) {
         if (moveTimer >= moveDelay) {

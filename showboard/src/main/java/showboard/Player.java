@@ -16,6 +16,11 @@ public class Player extends MovingPawn implements KeyListener {
 	private static int Score;
     private boolean left, right, up, down;
 
+    /**
+     * 
+     * @param boardPanel
+     * @throws IOException
+     */
     public Player(BoardPanel boardPanel) throws IOException {
         super("res/lorann_u.png", boardPanel);
         boardPanel.addKeyListener(this);
@@ -24,6 +29,10 @@ public class Player extends MovingPawn implements KeyListener {
         setMoveDelay(0.2f);
     }
 
+    /*
+     * (non-Javadoc)
+     * @see showboard.MovingPawn#onMove()
+     */
     @Override
     protected boolean onMove() {
         if (left)
@@ -36,6 +45,10 @@ public class Player extends MovingPawn implements KeyListener {
             setY(getY() + 1);
         else
             return false;
+        
+        /**
+         * Destroy Gate_Closed and open Gate_open
+         */
         ISquare square = getCurrentSquare();
         if (square != null && square.getId() == 'O') {
             for (int x = 0; x < getBoardPanel().getDimension().getWidth(); x += 1) {
@@ -77,6 +90,9 @@ public class Player extends MovingPawn implements KeyListener {
     public void keyReleased(KeyEvent e) {
     }
 
+    /**
+     * ResetKeys
+     */
     private void resetKeys() {
         left = false;
         up = false;

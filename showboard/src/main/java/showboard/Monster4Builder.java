@@ -11,10 +11,18 @@ import java.io.IOException;
  */
 public class Monster4Builder extends APawnBuilder<Monster4> {
 
+	/**
+	 * 
+	 * @param boardPanel
+	 * @throws IOException
+	 */
     protected Monster4Builder(BoardPanel boardPanel) throws IOException {
         super(boardPanel);
     }
 
+    /**
+     * Instantiate Monster4
+     */
     @Override
     protected Monster4 instantiate(BoardPanel boardPanel) throws IOException {
         return new Monster4(boardPanel);

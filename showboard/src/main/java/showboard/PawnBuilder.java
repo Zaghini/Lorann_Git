@@ -17,12 +17,22 @@ public class PawnBuilder extends APawnBuilder<Pawn> {
     private final Image   image;
     private final boolean solid;
 
+    /**
+     * 
+     * @param imagePath
+     * @param solid
+     * @param boardPanel
+     * @throws IOException
+     */
     public PawnBuilder(String imagePath, boolean solid, BoardPanel boardPanel) throws IOException {
         super(boardPanel);
         image = ImageIO.read(new File(imagePath));
         this.solid = solid;
     }
 
+    /**
+     * Instantiate Pawn
+     */
     @Override
     protected Pawn instantiate(BoardPanel boardPanel) {
         return new Pawn(image, solid, boardPanel);

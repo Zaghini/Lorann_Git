@@ -11,10 +11,18 @@ import java.io.IOException;
  */
 public class PlayerBuilder extends APawnBuilder<Player> {
 
+	/**
+	 * 
+	 * @param boardPanel
+	 * @throws IOException
+	 */
     protected PlayerBuilder(BoardPanel boardPanel) throws IOException {
         super(boardPanel);
     }
 
+    /**
+     * Instantiate Player
+     */
     @Override
     protected Player instantiate(BoardPanel boardPanel) throws IOException {
         return new Player(boardPanel);

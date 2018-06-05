@@ -13,11 +13,19 @@ public class Monster4 extends MovingPawn {
 
     private int timer = 0;
 
+    /**
+     * 
+     * @param boardPanel
+     * @throws IOException
+     */
     public Monster4(BoardPanel boardPanel) throws IOException {
         super("res/monster_4.png", boardPanel);
         setKillsOnTouch(true);
     }
 
+    /**
+     * Movement of the Monster
+     */
     @Override
     protected boolean onMove() {
         if (timer < 3) {

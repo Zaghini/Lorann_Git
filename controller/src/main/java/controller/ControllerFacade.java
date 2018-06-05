@@ -64,6 +64,11 @@ public class ControllerFacade implements IController {
         }
     }
 
+    /**
+     * 
+     * @param loadMap
+     * Will convert all the data in the map DB and put it in a graphic way
+     */
     private void loadMap(Map map) {
         board.setDimension(new Dimension(map.getWidth(), map.getHeight()));
         board.setDisplayFrame(new Rectangle(0, 0, map.getWidth(), map.getHeight()));
@@ -97,6 +102,10 @@ public class ControllerFacade implements IController {
         board.repaint();
     }
 
+    /**
+     * The loop that will refresh our window
+     * @throws InterruptedException
+     */
     private void mainLoop() throws InterruptedException {
         long time = System.currentTimeMillis();
         do {

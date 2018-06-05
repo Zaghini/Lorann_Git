@@ -21,6 +21,12 @@ public class Pawn implements IPawn {
     private final boolean    solid;
     private final BoardPanel boardPanel;
 
+    /**
+     * 
+     * @param image
+     * @param solid
+     * @param boardPanel
+     */
     public Pawn(Image image, boolean solid, BoardPanel boardPanel) {
         this.image = image;
         this.solid = solid;
@@ -28,14 +34,28 @@ public class Pawn implements IPawn {
         killsOnTouch = false;
     }
 
+    /**
+     * 
+     * @param imagePath
+     * @param boardPanel
+     * @throws IOException
+     */
     public Pawn(String imagePath, BoardPanel boardPanel) throws IOException {
         this(ImageIO.read(new File(imagePath)), false, boardPanel);
     }
 
+    /**
+     * 
+     * @param image
+     * @param boardPanel
+     */
     public Pawn(Image image, BoardPanel boardPanel) {
         this(image, false, boardPanel);
     }
 
+    /**
+     * Return a killsOnTouch
+     */
     public boolean isKillsOnTouch() {
         return killsOnTouch;
     }
@@ -44,18 +64,31 @@ public class Pawn implements IPawn {
         this.killsOnTouch = killsOnTouch;
     }
 
+    /**
+     * setX for isSolidAt
+     * @param x
+     */
     protected void setX(int x) {
         if (boardPanel.isSolidAt(x, y))
             return;
         this.x = x;
     }
 
+    /**
+     * setY for isSolidAt
+     * @param y
+     */
     protected void setY(int y) {
         if (boardPanel.isSolidAt(x, y))
             return;
         this.y = y;
     }
 
+    /**
+     * setPosition
+     * @param x
+     * @param y
+     */
     protected void setPosition(int x, int y) {
         if (boardPanel.isSolidAt(x, y))
             return;

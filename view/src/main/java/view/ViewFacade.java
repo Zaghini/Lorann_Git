@@ -30,6 +30,9 @@ public class ViewFacade implements IView {
         JOptionPane.showMessageDialog(null, message);
     }
 
+    /**
+     * Return boardFrame
+     */
     @Override
     public BoardFrame getBoardFrame() {
         return boardFrame;
