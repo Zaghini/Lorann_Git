@@ -18,6 +18,7 @@ public class Pawn implements IPawn {
     private       int     y;
     private final Image   image;
     private final boolean solid;
+    protected static Boolean alive = true;
 
     public Pawn(Image image, boolean solid) {
         this.image = image;
@@ -64,4 +65,14 @@ public class Pawn implements IPawn {
     public boolean isSolid() {
         return solid;
     }
+    
+    public Boolean isAlive() {
+        return this.alive;
+    }
+
+    public void die() {
+        this.alive = false;
+    }
+    
+    
 }

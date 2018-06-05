@@ -39,8 +39,9 @@ public class PawnBuilder implements IPawnBuilder<Pawn> {
         pawn.setY(y);
         return this;
     }
-
-    @Override
+    
+    
+	@Override
     public Pawn build() {
         Pawn ret = pawn;
         reset();

@@ -1,7 +1,6 @@
 package view;
 
 import showboard.BoardFrame;
-
 import javax.swing.*;
 
 /**

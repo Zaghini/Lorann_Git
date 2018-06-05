@@ -15,6 +15,8 @@ import java.io.IOException;
 public class Square implements ISquare {
 
     private Image image;
+    private int x;
+    private int y;
 
     public Square(String path) throws IOException {
         this(ImageIO.read(new File(path)));
@@ -32,5 +34,23 @@ public class Square implements ISquare {
     @Override
     public boolean isSolid() {
         return false;
+    }
+    
+    protected void setX(int x) {
+        this.x = x;
+    }
+
+    protected void setY(int y) {
+        this.y = y;
+    }
+
+    @Override
+    public int getX() {
+        return x;
+    }
+
+    @Override
+    public int getY() {
+        return y;
     }
 }

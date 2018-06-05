@@ -7,6 +7,8 @@ import model.IModel;
 import model.Map;
 import showboard.BoardFrame;
 import showboard.IPawn;
+import showboard.Lorann;
+import showboard.Monster_1;
 import showboard.PawnRegistry;
 import showboard.SquareRegistry;
 import view.IView;
@@ -30,6 +32,8 @@ public class ControllerFacade implements IController {
      * The model.
      */
     private final IModel model;
+    
+    private Lorann lorann;
 
     /**
      * Instantiates a new controller facade.

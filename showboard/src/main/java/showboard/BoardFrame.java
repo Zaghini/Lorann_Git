@@ -57,6 +57,7 @@ public class BoardFrame extends JFrame implements IBoard {
         this.setContentPane(this.boardPanel);
         this.setResizable(false);
         this.setVisible(true);
+        
     }
 
     /**
