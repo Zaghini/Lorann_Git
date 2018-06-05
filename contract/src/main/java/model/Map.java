@@ -8,7 +8,6 @@ package model;
  * @since 04/06/2018
  */
 
-//Class that instantiate the map table with all his values and variables
 public class Map {
 
     private final int    id;
