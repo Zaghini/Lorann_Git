@@ -20,9 +20,9 @@ public class Monster1 extends MovingPawn {
     @Override
     protected boolean onMove() {
         if (timer < 3) {
-            setX(getX() + 1);
+            setY(getY() + 1);
         } else {
-            setX(getX() - 1);
+            setY(getY() - 1);
         }
         timer = (timer + 1) % 6;
         return true;

@@ -20,6 +20,9 @@ public class PawnRegistry {
         try {
             registry.put("Player", new PlayerBuilder(boardPanel));
             registry.put("Monster1", new Monster1Builder(boardPanel));
+            registry.put("Monster2", new Monster2Builder(boardPanel));
+            registry.put("Monster3", new Monster3Builder(boardPanel));
+            registry.put("Monster4", new Monster4Builder(boardPanel));
         } catch (IOException e) {
             e.printStackTrace();
         }

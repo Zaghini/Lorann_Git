@@ -26,6 +26,7 @@ public class SquareRegistry {
             registry.put('O', new Square("res/crystal_ball.png", false));
             registry.put('B', new Square("res/purse.png", false));
             registry.put('F', new Square("res/gate_closed.png", true));
+            registry.put('G', new Square("res/gate_open.png", false));
         } catch (IOException ex) {
             ex.printStackTrace();
         }
