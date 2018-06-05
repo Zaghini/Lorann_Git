@@ -39,4 +39,6 @@ public interface IPawn extends ISquare {
     Point getPosition();
 
     void update(float delta);
+
+    boolean isKillsOnTouch();
 }

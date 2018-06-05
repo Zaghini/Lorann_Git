@@ -105,6 +105,7 @@ public class BoardPanel extends JPanel implements Observer {
         final Graphics2D graphics = this.noImage.createGraphics();
         graphics.setColor(Color.BLACK);
         graphics.fillRect(0, 0, 2, 2);
+        
     }
 
     public boolean isFinished() {

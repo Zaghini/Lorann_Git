@@ -15,14 +15,15 @@ public class Monster2 extends MovingPawn {
 
     public Monster2(BoardPanel boardPanel) throws IOException {
         super("res/monster_2.png", boardPanel);
+        setKillsOnTouch(true);
     }
 
     @Override
     protected boolean onMove() {
         if (timer < 3) {
-            setX(getX() + 1);
+            setY(getY() + 1);
         } else {
-            setX(getX() - 1);
+            setY(getY() - 1);
         }
         timer = (timer + 1) % 6;
         return true;

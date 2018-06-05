@@ -15,8 +15,7 @@ import java.sql.SQLException;
  */
 public abstract class MapDAO extends AbstractDAO {
 
-    private static final String sqlMapByName =
-            "SELECT map.id, map.name, map.width, map.height, map.map_data, map.pawn_data FROM map WHERE name = ?";
+	private static final String sqlMapByName = "{call findMapByName(?)}";
 
     public static Map getMapByName(final String name) throws SQLException {
         final CallableStatement statement = prepareCall(sqlMapByName);

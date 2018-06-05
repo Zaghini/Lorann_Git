@@ -12,7 +12,8 @@ import java.io.IOException;
  * @since 05/06/2018
  */
 public class Player extends MovingPawn implements KeyListener {
-
+	
+	private static int Score;
     private boolean left, right, up, down;
 
     public Player(BoardPanel boardPanel) throws IOException {
@@ -48,6 +49,15 @@ public class Player extends MovingPawn implements KeyListener {
         }
         if (square != null && square.getId() == 'G') {
             getBoardPanel().setFinished(true);
+        }
+        for (IPawn pawn : getBoardPanel().getPawnsAt(getX(), getY())) {
+            if (pawn.isKillsOnTouch())
+                getBoardPanel().setFinished(true);
+            	
+        }
+        if (square != null && square.getId() == 'B') {
+        	getBoardPanel().addSquare(null, getX(), getY());
+        	setScore(getScore()+500);
         }
         resetKeys();
         return true;
@@ -90,5 +100,13 @@ public class Player extends MovingPawn implements KeyListener {
                 break;
         }
     }
+
+	public static int getScore() {
+		return Score;
+	}
+
+	public void setScore(int score) {
+		Score = score;
+	}
 
 }

@@ -16,6 +16,7 @@ public class Pawn implements IPawn {
 
     private       int        x;
     private       int        y;
+    private       boolean    killsOnTouch;
     private final Image      image;
     private final boolean    solid;
     private final BoardPanel boardPanel;
@@ -24,6 +25,7 @@ public class Pawn implements IPawn {
         this.image = image;
         this.solid = solid;
         this.boardPanel = boardPanel;
+        killsOnTouch = false;
     }
 
     public Pawn(String imagePath, BoardPanel boardPanel) throws IOException {
@@ -32,6 +34,14 @@ public class Pawn implements IPawn {
 
     public Pawn(Image image, BoardPanel boardPanel) {
         this(image, false, boardPanel);
+    }
+
+    public boolean isKillsOnTouch() {
+        return killsOnTouch;
+    }
+
+    public void setKillsOnTouch(boolean killsOnTouch) {
+        this.killsOnTouch = killsOnTouch;
     }
 
     protected void setX(int x) {

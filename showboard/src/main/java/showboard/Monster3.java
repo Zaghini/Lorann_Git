@@ -15,6 +15,7 @@ public class Monster3 extends MovingPawn {
 
     public Monster3(BoardPanel boardPanel) throws IOException {
         super("res/monster_3.png", boardPanel);
+        setKillsOnTouch(true);
     }
 
     @Override
