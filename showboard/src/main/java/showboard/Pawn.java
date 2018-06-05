@@ -8,7 +8,7 @@ import java.io.IOException;
 /**
  * Pawn.java created for lorann
  *
- * @author Antoine
+ * @author Julien
  * @version 1.0
  * @since 04/06/2018
  */
@@ -57,6 +57,10 @@ public class Pawn implements IPawn {
         return boardPanel;
     }
 
+    protected ISquare getCurrentSquare() {
+        return boardPanel.getSquareAt(x, y);
+    }
+
     @Override
     public int getX() {
         return x;
@@ -80,6 +84,11 @@ public class Pawn implements IPawn {
     @Override
     public boolean isSolid() {
         return solid;
+    }
+
+    @Override
+    public char getId() {
+        return 0;
     }
 
     @Override

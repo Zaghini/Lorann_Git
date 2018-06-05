@@ -6,7 +6,7 @@ import java.io.IOException;
 /**
  * MovingPawn.java created for lorann
  *
- * @author Antoine
+ * @author Julien
  * @version 1.0
  * @since 05/06/2018
  */

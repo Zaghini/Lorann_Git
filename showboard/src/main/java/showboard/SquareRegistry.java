@@ -7,7 +7,7 @@ import java.util.Map;
 /**
  * SquareRegistry.java created for lorann
  *
- * @author Antoine
+ * @author Julien
  * @version 1.0
  * @since 03/06/2018
  */
@@ -20,13 +20,13 @@ public class SquareRegistry {
     private SquareRegistry() {
         registry = new HashMap<>();
         try {
-            registry.put('M', new Square("res/bone.png", true));
-            registry.put('I', new Square("res/vertical_bone.png", true));
-            registry.put('-', new Square("res/horizontal_bone.png", true));
-            registry.put('O', new Square("res/crystal_ball.png", false));
-            registry.put('B', new Square("res/purse.png", false));
-            registry.put('F', new Square("res/gate_closed.png", true));
-            registry.put('G', new Square("res/gate_open.png", false));
+            registry.put('M', new Square("res/bone.png", true, 'M'));
+            registry.put('I', new Square("res/vertical_bone.png", true, 'I'));
+            registry.put('-', new Square("res/horizontal_bone.png", true, '-'));
+            registry.put('O', new Square("res/crystal_ball.png", false, 'O'));
+            registry.put('B', new Square("res/purse.png", false, 'B'));
+            registry.put('F', new Square("res/gate_closed.png", true, 'F'));
+            registry.put('G', new Square("res/gate_open.png", false, 'G'));
         } catch (IOException ex) {
             ex.printStackTrace();
         }

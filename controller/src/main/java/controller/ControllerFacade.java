@@ -107,6 +107,10 @@ public class ControllerFacade implements IController {
             for (IPawn pawn : board.getBoardPanel().getPawns()) {
                 pawn.update(delta);
             }
+            if (board.getBoardPanel().isFinished()) {
+                board.dispose();
+                break;
+            }
             board.repaint();
         } while (true);
     }

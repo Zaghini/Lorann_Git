@@ -3,7 +3,7 @@ package model;
 /**
  * Map.java created for lorann
  *
- * @author Antoine
+ * @author Julien
  * @version 1.0
  * @since 04/06/2018
  */

@@ -93,6 +93,8 @@ public class BoardPanel extends JPanel implements Observer {
      */
     private Boolean heightLooped = false;
 
+    private boolean finished = false;
+
     /**
      * Instantiates a new board panel.
      */
@@ -103,6 +105,14 @@ public class BoardPanel extends JPanel implements Observer {
         final Graphics2D graphics = this.noImage.createGraphics();
         graphics.setColor(Color.BLACK);
         graphics.fillRect(0, 0, 2, 2);
+    }
+
+    public boolean isFinished() {
+        return finished;
+    }
+
+    public void setFinished(boolean finished) {
+        this.finished = finished;
     }
 
     /**

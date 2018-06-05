@@ -7,7 +7,7 @@ import java.io.IOException;
 /**
  * Player.java created for lorann
  *
- * @author Antoine
+ * @author Julien
  * @version 1.0
  * @since 05/06/2018
  */
@@ -35,6 +35,20 @@ public class Player extends MovingPawn implements KeyListener {
             setY(getY() + 1);
         else
             return false;
+        ISquare square = getCurrentSquare();
+        if (square != null && square.getId() == 'O') {
+            for (int x = 0; x < getBoardPanel().getDimension().getWidth(); x += 1) {
+                for (int y = 0; y < getBoardPanel().getDimension().getHeight(); y += 1) {
+                    square = getBoardPanel().getSquareAt(x, y);
+                    if (square != null && square.getId() == 'F')
+                        getBoardPanel().addSquare(SquareRegistry.getInstance().getSquare('G'), x, y);
+                }
+            }
+            getBoardPanel().addSquare(null, getX(), getY());
+        }
+        if (square != null && square.getId() == 'G') {
+            getBoardPanel().setFinished(true);
+        }
         resetKeys();
         return true;
     }

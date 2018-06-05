@@ -22,4 +22,6 @@ public interface ISquare {
     Image getImage();
 
     boolean isSolid();
+
+    char getId();
 }
